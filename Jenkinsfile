@@ -20,5 +20,15 @@ pipeline {
                 '''
             }
         }
+        stage('Test') {
+            steps {
+                sh '''
+                    ls -la
+                    grep build/index.html
+                    npm test
+                    grep test-results/junit.xml
+                '''
+            }
+        }
     }
 }
