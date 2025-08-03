@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     stages {
+        // commented out the build stage for now
+        /*
         stage('Build') {
             agent {
                 docker {
@@ -20,6 +22,7 @@ pipeline {
                 '''
             }
         }
+        */
         stage('Test') {
             agent {
                 docker {
